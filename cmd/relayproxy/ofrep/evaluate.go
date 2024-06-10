@@ -111,11 +111,12 @@ func (h *EvaluateCtrl) Evaluate(c echo.Context) error {
 	)
 
 	return c.JSON(http.StatusOK, model.OFREPEvaluateSuccessResponse{
-		Key:      flagKey,
-		Value:    flagValue.Value,
-		Reason:   flagValue.Reason,
-		Variant:  flagValue.VariationType,
-		Metadata: flagValue.Metadata,
+		Key:       flagKey,
+		Value:     flagValue.Value,
+		Reason:    flagValue.Reason,
+		Variant:   flagValue.VariationType,
+		Metadata:  flagValue.Metadata,
+		Cacheable: flagValue.Cacheable,
 	})
 }
 
